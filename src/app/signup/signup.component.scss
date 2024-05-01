@@ -1,0 +1,14 @@
+.card{
+  width: 480px;
+  height: 582px;
+  background-color: rgb(4, 28, 186);
+  color: aliceblue;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 13px, 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+}

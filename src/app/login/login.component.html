@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Trust Resto</h1>
+          <strong>Feel Free To Login 😊</strong>
+          <hr />
+        </div>
+        <form [formGroup]="myform" (ngSubmit)="login()">
+          <div class="mb-3">
+            <label for="exampleInputEmail">Email</label>
+            <input
+              type="email"
+              formControlName="email"
+              maxlength="25"
+              class="form-control"
+              placeholder="text@email.cd"
+              id="exampleInputEmail"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword">Password</label>
+            <input
+              type="password"
+              formControlName="password"
+              maxlength="20"
+              class="form-control"
+              placeholder="xxxxxx"
+              id="exampleInputPassword"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a style="color: rgb(245, 4, 4); margin-top: 10px" routerLink="/signup">
+          You don't have an account? Click here to signup
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-toast></ng-toast>

@@ -1,0 +1,215 @@
+<div class="content-body">
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h2 class="text-light primary py-2">Trust Resto</h2>
+      <div class="d-flex">
+        <button
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Add Restaurant
+        </button>
+        &nbsp;&nbsp;
+        <button routerLink="/login" class="btn btn-warning">Logout</button>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar Close -->
+  <br />
+  <!-- Jumbotron -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="display-4 text-ccenter">
+        Restaurant Management Application
+      </div>
+      <p class="lead">Hello user! Manage your restaurant</p>
+    </div>
+  </div>
+  <!-- Jumbotron Close -->
+  <br />
+
+  <!-- Search bar -->
+  <div class="form-outline">
+    <input
+      type="text"
+      style="width: 20%; margin-left: 72%"
+      class="form-control"
+      placeholder="name"
+    />
+  </div>
+  <!-- Serach Close -->
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">R.Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Adress</th>
+          <th scope="col">Services</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allRestaurantData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.mobile }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.services }}</td>
+          <td>
+            <mat-icon
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              color="primary"
+            >
+              edit
+            </mat-icon>
+            &nbsp;
+            <mat-icon color="warn"> delete </mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Pagination -->
+    <div class="pagination">
+      <!-- <pagination-controls></pagination-controls> -->
+    </div>
+    <!-- Paination Close -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="#exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-title" style="background: blue">
+            <h5
+              style="
+                font-size: 26px;
+                color: white;
+                font-weight: 700;
+                margin-left: 62px;
+              "
+              id="exampleModalLabel"
+              class="modal-title"
+            >
+              RESTAURANT RECORDS
+            </h5>
+            <button
+              style="font-size: 20px"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- Modal Box -->
+          <div class="modal-body" style="background: white">
+            <form [formGroup]="myGroup">
+              <div class="form-group">
+                <label for="exampleInputName">Name</label>
+                <input
+                  type="text"
+                  formControlName="name"
+                  maxlength="20"
+                  class="form-control"
+                  id="exampleInputName"
+                />
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label for="exampleInputEmail">Email Address</label>
+                <input
+                  type="email"
+                  formControlName="email"
+                  maxlength="25"
+                  class="form-control"
+                  id="exampleInputEmail"
+                  placeholder="Enter Emaill"
+                />
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label for="exampleInputMobile">Mobile</label>
+                <input
+                  type="text"
+                  formControlName="mobile"
+                  maxlength="25"
+                  class="form-control"
+                  id="exampleInputMobile"
+                  placeholder="Enter Mobile number"
+                />
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label for="exampleInputAdress">Adress</label>
+                <input
+                  type="text"
+                  formControlName="address"
+                  maxlength="25"
+                  class="form-control"
+                  id="exampleInputAdress"
+                  placeholder="Enter Address"
+                />
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label for="exampleInputServices">Services</label>
+                <input
+                  type="url"
+                  formControlName="services"
+                  maxlength="25"
+                  class="form-control"
+                  id="exampleInputServices"
+                  placeholder="Enter a services"
+                />
+              </div>
+              <br />
+            </form>
+          </div>
+          <div style="background: blue" class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-warning"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              *ngIf="showAdd"
+              type="button"
+              class="btn btn-success"
+              (click)="addrestaurant()"
+            >
+              Add details
+            </button>
+            <button
+              *ngIf="showBtn"
+              type="button"
+              class="btn btn-success"
+              (click)="updateResto()"
+            >
+              Update details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

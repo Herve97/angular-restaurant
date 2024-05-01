@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Trust Resto</h1>
+          <strong>Get Free Membership 😊</strong>
+          <hr />
+        </div>
+        <form [formGroup]="myform" (ngSubmit)="signup()">
+          <div class="form-group">
+            <div class="mb-3">
+              <label for="exampleName">Name</label>
+              <input
+                type="text"
+                formControlName="name"
+                maxlength="20"
+                class="form-control"
+                placeholder="Hervé Diams"
+                id="exampleName"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPhone">Mobile Number</label>
+              <input
+                type="number"
+                formControlName="mobile"
+                maxlength="10"
+                class="form-control"
+                placeholder="Enter your mobile number"
+                id="exampleInputPhone"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail">Email</label>
+              <input
+                type="email"
+                formControlName="email"
+                maxlength="25"
+                class="form-control"
+                placeholder="text@email.cd"
+                id="exampleInputEmail"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword">Password</label>
+              <input
+                type="password"
+                formControlName="password"
+                maxlength="20"
+                class="form-control"
+                placeholder="xxxxxx"
+                id="exampleInputPassword"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Signup</button>
+          </div>
+        </form>
+        <a style="color: rgb(245, 4, 4); margin-top: 10px" routerLink="/login">
+          Already registered? Click here to login
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

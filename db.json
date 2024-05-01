@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Hervé",
+      "email": "herve@angular.io",
+      "mobile": 892378711,
+      "address": "Kinshasa",
+      "services": "Delivery Service"
+    },
+    {
+      "id": 2,
+      "name": "Remonant",
+      "email": "rems@angular.io",
+      "mobile": 892378711,
+      "address": "Russie",
+      "services": "Food Service"
+    }
+  ],
+  "comments": [],
+  "signup": {
+    "name": "Benitha",
+    "mobile": 892378711,
+    "email": "benitha@angular.io",
+    "password": "12345678"
+  }
+}
